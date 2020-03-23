@@ -1,0 +1,35 @@
+What to use ‘let’ or ‘var’ ?
+
+* var - has function level scoping and can change the value reference
+* let - has block level scoping and can change the value reference
+
+
+Try this out for yourself and decide. 
+
+var a = 10
+let  q = 20
+
+for (q =2;q<10;q++){ console.log(q); }
+
+O/p : undefined
+
+for (a;a<20;a++){console.log(a)}
+
+// prints 10 to 19
+
+From the above runs we can understand that var has a global scope and let has block scope.
+
+But when it comes to functions, var and let behave the same way.  The scope of both ends within the function. 
+
+function f() {let q = 10 ; var s = 35; console.log(s)}
+
+
+The above example states that we have a better control with let. But let was introduced only after ES6. 
+
+My advice to you : 
+
+* If you are writing code that will executed a controlled environment where you know let and const are supported, don't use var.
+* The best place for this is nodejs modules. If you use nodejs 6.5 and above your environment supports ES6, thus the let and const keywords.
+* If you are writing for an enterprise that has deprecated Internet Explorer for Edge and other modern browsers then go ahead and use ES6 syntax.
+* If your code might run on Internet Explorer or older Android phones you may want to stick to the ES5 syntax and only use var to declare variables.
+* Of course if you use TypeScript or Bable you can have them transpile your code to ES5. I am not a huge fan of this approach as I think the code gets a little funky to debug.
