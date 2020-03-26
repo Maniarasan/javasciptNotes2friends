@@ -1,0 +1,10 @@
+Difference between require and import 
+
+'require' is a CommonJS convention
+const xyz = require('xyz')
+
+module.export is used to export in CommonJS
+
+'import' is ES6 convention
+'import' allows to selectively pick the pieces that is needed. 
+This saves a lot of memory
